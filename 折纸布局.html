@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>折纸效果</title>
+</head>
+<style>
+    /*折纸布局的导航很重要*/
+    #wrap{
+        width:500px; margin:0 auto;
+        -webkit-perspective:800px;
+        -webkit-transform-style:preserve-3d; //3d 空间
+        position:relative;
+    }
+    #wrap div{
+        width:500px;
+        position:absolute;
+        top:102px;
+        left:0;
+        -webkit-transform-origin:top;
+        -webkit-transform-style:preserve-3d;
+    }
+    #wrap span{
+        height:100px;
+        border:1px solid #ff0000;
+        background-color:#ccc;
+        display:block;
+    }
+    #wrap>div:nth-of-type(1){
+        top:0;
+        -webkit-transform-origin:bottom;
+
+    }
+</style>
+<body>
+<div id="wrap">
+    <div style="-webkit-transform:rotateX(-45deg)">
+        <span>1</span>
+        <div style="-webkit-transform:rotateX(90deg)">
+            <span>2</span>
+            <div style="-webkit-transform:rotateX(-90deg)">
+                <span>3</span>
+                <div style="-webkit-transform:rotateX(90deg)">
+                    <span>3</span>
+                    <div style="-webkit-transform:rotateX(-90deg)">
+                        <span>3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
